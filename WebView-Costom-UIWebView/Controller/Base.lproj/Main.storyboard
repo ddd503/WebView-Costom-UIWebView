@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zCj-e7-Kaz">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--UIWebView-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WebView_Costom_UIWebView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F8P-nA-RBy" customClass="CostomView" customModule="WebView_Costom_UIWebView" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Azw-GF-yMm">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem enabled="NO" systemItem="rewind" id="SZC-sY-Qz9">
+                                        <connections>
+                                            <action selector="back:" destination="BYZ-38-t0r" id="8vW-vf-NCW"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Zf0-Zf-oNp"/>
+                                    <barButtonItem enabled="NO" systemItem="fastForward" id="vul-OF-ru2">
+                                        <connections>
+                                            <action selector="forword:" destination="BYZ-38-t0r" id="4Hv-qy-mm9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hon-KE-Nhq"/>
+                                    <barButtonItem systemItem="refresh" id="8EM-PU-dHt">
+                                        <connections>
+                                            <action selector="refresh:" destination="BYZ-38-t0r" id="zN9-Eh-GPJ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="tN2-K9-hwF">
+                                <rect key="frame" x="290" y="635.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F8P-nA-RBy" secondAttribute="trailing" id="1Ok-Jp-veV"/>
+                            <constraint firstItem="tN2-K9-hwF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.935" id="3h6-9a-hFP"/>
+                            <constraint firstItem="Azw-GF-yMm" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="74G-JN-geA"/>
+                            <constraint firstItem="F8P-nA-RBy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="N8a-0L-efa"/>
+                            <constraint firstItem="Azw-GF-yMm" firstAttribute="top" secondItem="F8P-nA-RBy" secondAttribute="bottom" id="Tvi-1u-DZy"/>
+                            <constraint firstItem="Azw-GF-yMm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YbC-jk-j22"/>
+                            <constraint firstItem="F8P-nA-RBy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eCT-Gw-KxK"/>
+                            <constraint firstItem="tN2-K9-hwF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="1.6" id="qwk-PQ-e7s"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Azw-GF-yMm" secondAttribute="bottom" id="rdK-T3-8T6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="UIWebView" id="wtz-FP-0E5"/>
+                    <connections>
+                        <outlet property="backButton" destination="SZC-sY-Qz9" id="03e-l9-geE"/>
+                        <outlet property="costomWebView" destination="F8P-nA-RBy" id="JEo-VI-CYz"/>
+                        <outlet property="forwordButton" destination="vul-OF-ru2" id="IFi-ME-iuh"/>
+                        <outlet property="indicetor" destination="tN2-K9-hwF" id="3Wb-QH-B8i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="702.5" y="31.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="751-DI-Msn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zCj-e7-Kaz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Aj6-4D-y1n">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="UNB-f4-tQe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4aP-Qz-52H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="115.5" y="31.5"/>
+        </scene>
+    </scenes>
+</document>
